@@ -1,0 +1,32 @@
+$maxWidth: 1920;
+$maxHeight: 1447;
+@mixin adaptiv-font($pcSize, $mobSize) {
+	$addSize: $pcSize - $mobSize;
+	$maxWidth: $maxWidth - 320;
+	font-size: calc(#{$mobSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidth}));
+}
+@mixin adaptiv-letter-spacing($pcSize, $mobSize) {
+	$addSize: $pcSize - $mobSize;
+	$maxWidth: $maxWidth - 320;
+	letter-spacing: calc(#{$mobSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidth}));
+}
+@mixin adaptiv-margin-right($pcSize, $mobSize) {
+	$addSize: $pcSize - $mobSize;
+	$maxWidth: $maxWidth - 320;
+	margin-right: calc(#{$mobSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidth}));
+}
+@mixin adaptiv-width($pcSize, $mobSize) {
+	$addSize: $pcSize - $mobSize;
+	$maxWidth: $maxWidth - 320;
+	width: calc(#{$mobSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidth}));
+}
+@mixin adaptiv-top($pcSize, $mobSize) {
+	$addSize: $pcSize - $mobSize;
+	$maxheight: $maxHeight - 197;
+	top: calc(#{$mobSize + px} + #{$addSize} * ((100vh - 320px) / (#{$maxHeight} - 697)));
+}
+@function adaptiv-on-width($pcSize, $mobSize){
+	$addSize: $pcSize - $mobSize;
+	$maxWidth: $maxWidth - 320;
+	@return calc(#{$mobSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidth}));
+}
